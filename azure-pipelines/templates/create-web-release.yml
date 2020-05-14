@@ -4,10 +4,11 @@ jobs:
       vmImage: 'windows-latest'
 
     steps:
-      - bash: |
-          git checkout $BUILD_SOURCEBRANCH
-          git pull
-        displayName: "Pull latest after version bump"
+      - task: Bash@3
+        displayName: 'Pull latest from branch'
+        inputs:
+          targetType: filePath
+          filePath: './scripts/git-pull-current-branch.sh'
 
       - task: NodeTool@0
         displayName: 'Use Node 10.x'

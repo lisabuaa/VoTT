@@ -41,11 +41,12 @@ jobs:
       vmImage: ubuntu-16.04
 
     steps:
-    # - checkout: none # we already have the artifacts built, don't need the code
-    - bash: |
-        git checkout $BUILD_SOURCEBRANCH
-        git pull
-      displayName: "Pull latest after version bump"
+    - checkout: none # we already have the artifacts built, don't need the code
+    # - task: Bash@3
+    #   displayName: 'Pull latest from branch'
+    #   inputs:
+    #     targetType: filePath
+    #     filePath: './scripts/git-pull-current-branch.sh'
 
     - download: current
 
