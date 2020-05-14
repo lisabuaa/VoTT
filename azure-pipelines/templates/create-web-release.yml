@@ -9,6 +9,8 @@ jobs:
         inputs:
           targetType: filePath
           filePath: './scripts/git-pull-current-branch.sh'
+        env:
+          SOURCE_BRANCH: $(Build.SourceBranch)
 
       - task: NodeTool@0
         displayName: 'Use Node 10.x'
