@@ -42,11 +42,7 @@ jobs:
 
     steps:
     - checkout: none # we already have the artifacts built, don't need the code
-    # - task: Bash@3
-    #   displayName: 'Pull latest from branch'
-    #   inputs:
-    #     targetType: filePath
-    #     filePath: './scripts/git-pull-current-branch.sh'
+    - template: templates/git-pull-current-branch.yml
 
     - download: current
 
