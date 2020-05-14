@@ -5,8 +5,8 @@ jobs:
 
     steps:
       - bash: |
-          printenv | sort
-          git pull origin $(BUILD_SOURCEBRANCH)
+          git checkout $BUILD_SOURCEBRANCH
+          git pull
         displayName: "Pull latest after version bump"
 
       - task: NodeTool@0

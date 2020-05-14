@@ -43,7 +43,8 @@ jobs:
     steps:
     # - checkout: none # we already have the artifacts built, don't need the code
     - bash: |
-        git pull origin $(BUILD_SOURCEBRANCH)
+        git checkout $BUILD_SOURCEBRANCH
+        git pull
       displayName: "Pull latest after version bump"
 
     - download: current
