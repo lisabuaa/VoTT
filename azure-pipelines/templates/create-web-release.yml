@@ -4,7 +4,7 @@ jobs:
       vmImage: 'windows-latest'
 
     steps:
-    - template: templates/git-pull-current-branch.yml
+    - template: git-pull-current-branch.yml
 
       - task: NodeTool@0
         displayName: 'Use Node 10.x'

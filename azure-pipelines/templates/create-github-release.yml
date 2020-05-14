@@ -42,7 +42,7 @@ jobs:
 
     steps:
     - checkout: none # we already have the artifacts built, don't need the code
-    - template: templates/git-pull-current-branch.yml
+    - template: git-pull-current-branch.yml
 
     - download: current
 
